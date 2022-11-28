@@ -1,5 +1,6 @@
 
-export default function Jogo() {
+export default function Jogo(palavras) {
+    console.log(palavras.palavras[180])
     return (
         <div className="jogo">
             <div className="imagem">
