@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
+
 .conteudo {
     display: flex;
     flex-direction: column;
@@ -54,6 +56,9 @@ body{
     font-family: 'Noto Sans';
     line-height: 68px;
 }
+.botao-palavra p span{
+    margin-right: 10px;
+}
 
 .teclado {
     display: flex;
@@ -71,10 +76,59 @@ body{
     align-items: center;
     justify-content: center;
     color: #798A9F;
-    background-color: #7AA7C7;
+    background-color: #9FAAB5;
     border-radius: 3px;
+    border: 1px solid #7AA7C7;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     margin: 12px;
+}
+.habilitar-letra{
+    color: #39739D;;
+    background: #E1ECF4;
+}
 
+.chute {
+    display: flex;
+    margin-top: 56px;
+    margin-right: 50px;
+}
+
+.chute p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+.chute input {
+    width: 353px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+
+.chute button {
+    width: 100px;
+    height: 40px;
+    margin-left: 15px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #3C76A1;
+
+    background: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
 }
