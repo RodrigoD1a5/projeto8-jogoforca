@@ -63,7 +63,7 @@ body {
 .teclado {
     display: flex;
     flex-wrap: wrap;
-    max-width: 48%;
+    max-width: 36%;
     margin-top: 71px;
 }
 

@@ -1,25 +1,25 @@
 
 export default function Jogo(props) {
-
+    const{palavraEscolhida, palavras, setPalavraEscolhida, setIniciarJogo, chutes} = props
     function escolherPalavra(palavras) {
-        if (props.palavraEscolhida === "") {
+        if (palavraEscolhida === "") {
             const palavra = palavras[Math.floor(Math.random() * palavras.length)]
 
-            props.setPalavraEscolhida(palavra)
-            props.setIniciarJogo(true)
+            setPalavraEscolhida(palavra)
+            setIniciarJogo(true)
         }
     }
-    const listaDeCaracteres = props.palavraEscolhida.split("")
+    const listaDeCaracteres = palavraEscolhida.split("")
     return (
         <div className="jogo">
             <div className="imagem">
                 <img src="assets/forca0.png" />
             </div>
             <div className="botao-palavra">
-                <button onClick={() => escolherPalavra(props.palavras)}>Escolher Palavra</button>
+                <button onClick={() => escolherPalavra(palavras)}>Escolher Palavra</button>
                 <p>
                     {listaDeCaracteres.map((c) =>
-                        <span>_</span>)}
+                        <span>{chutes.includes(c)? c :"_"}</span>)}
                 </p>
             </div>
         </div>
