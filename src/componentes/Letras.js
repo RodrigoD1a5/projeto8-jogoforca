@@ -1,8 +1,11 @@
 export default function Letras(props){
-    const {chutes, setChutes, alfabeto, iniciarJogo}= props
+    const {palavraEscolhida, chutes, setChutes, alfabeto, iniciarJogo, erros, setErros}= props
     function armazenarChutes(letra){
-        if ( iniciarJogo && !chutes.includes(letra)){
+        if ( iniciarJogo && !chutes.includes(letra) && erros < 6  ){
             setChutes([...chutes, letra])
+            if(!palavraEscolhida.includes(letra)){
+                setErros(erros + 1 )
+            }
         }
     }
     return(
