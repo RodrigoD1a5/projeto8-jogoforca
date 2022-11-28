@@ -1,19 +1,42 @@
-export default function Letras(props){
-    const {palavraEscolhida, chutes, setChutes, alfabeto, iniciarJogo, erros, setErros}= props
-    function armazenarChutes(letra){
-        if ( iniciarJogo && !chutes.includes(letra) && erros < 6  ){
+export default function Letras(props) {
+    const { ganhou,perdeu , letrasDesabilitadas, setLetrasDesabilitadas, palavraEscolhida, chutes, setChutes, alfabeto, iniciarJogo, erros, setErros, setTerminarJogo } = props
+    
+
+    let verificarSeGanhou = []
+    for (let i = 0; i < palavraEscolhida.length; i++) {
+        verificarSeGanhou.push(true)
+    }
+    if ((palavraEscolhida.map((l) => letrasDesabilitadas.includes(l)).toString()) === verificarSeGanhou.toString() && letrasDesabilitadas.length > 1) {
+        ganhou()
+    }
+
+
+    function armazenarChutes(letra) {
+
+        if (iniciarJogo && !chutes.includes(letra) && erros < 6) {
             setChutes([...chutes, letra])
-            if(!palavraEscolhida.includes(letra)){
-                setErros(erros + 1 )
+            setLetrasDesabilitadas([...letrasDesabilitadas, letra])
+
+            let verificarSeGanhou = []
+            for (let i = 0; i < palavraEscolhida.length; i++) {
+                verificarSeGanhou.push(true)
+            }
+            if (!palavraEscolhida.includes(letra)) {
+                setErros(erros + 1)
+
+                if (erros === 5) {
+                    perdeu()
+                    setChutes(palavraEscolhida)
+                }
             }
         }
     }
-    return(
+    return (
         <ul className="teclado">
-            {alfabeto.map((letra)=> 
-            <li className={`letra ${iniciarJogo && !chutes.includes(letra)? "habilitar-letra" : ""}`} onClick={()=>armazenarChutes(letra)}>
-                {letra.toUpperCase()}
-            </li>)}
+            {alfabeto.map((letra) =>
+                <li className={`letra ${iniciarJogo && !letrasDesabilitadas.includes(letra) ? "habilitar-letra" : ""}`} onClick={() => armazenarChutes(letra)}>
+                    {letra.toUpperCase()}
+                </li>)}
         </ul>
     )
 }

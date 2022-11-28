@@ -56,7 +56,8 @@ body {
     font-family: 'Noto Sans';
     line-height: 68px;
 }
-.botao-palavra p span{
+
+.botao-palavra p span {
     margin-right: 10px;
 }
 
@@ -83,8 +84,10 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 12px;
 }
-.habilitar-letra{
-    color: #39739D;;
+
+.habilitar-letra {
+    color: #39739D;
+    ;
     background: #E1ECF4;
 }
 
@@ -131,4 +134,12 @@ body {
     background: #E1ECF4;
     border: 1px solid #7AA7C7;
     border-radius: 3px;
+}
+
+.verde {
+    color: #27AE60;
+}
+
+.vermelho {
+    color: #FF0000;
 }

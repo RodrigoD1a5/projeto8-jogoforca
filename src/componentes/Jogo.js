@@ -1,6 +1,6 @@
 
 export default function Jogo(props) {
-    const{palavraEscolhida, palavras, setPalavraEscolhida, setIniciarJogo, chutes, erros} = props
+    const{ corDaPalavra , palavraEscolhida, palavras, setPalavraEscolhida, setIniciarJogo, chutes, erros} = props
     function escolherPalavra(palavras) {
         if  (!palavraEscolhida[0]) {
             const palavra = palavras[Math.floor(Math.random() * palavras.length)]
@@ -17,7 +17,7 @@ export default function Jogo(props) {
                 <button onClick={() => escolherPalavra(palavras)}>Escolher Palavra</button>
                 <p>
                     {palavraEscolhida.map((c) =>
-                        <span>{chutes.includes(c)? c :"_"}</span>)}
+                        <span className={corDaPalavra}>{chutes.includes(c)? c :"_"}</span>)}
                 </p>
             </div>
         </div>
